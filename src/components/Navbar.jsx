@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 // Importando a logo da sua pasta assets
-import Brandlogo from '../assets/logo_up.jpeg'; 
+import Brandlogo from "../assets/Container.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,8 +25,7 @@ const Navbar = () => {
       
       {/* 1. Esquerda: Logotipo da Marca */}
       <div className="flex items-center gap-2 w-1/4">
-        <img src={Brandlogo} alt="Logo" className="w-10 h-10 object-contain" />
-        <span className="font-headline font-bold text-xl tracking-tighter uppercase text-[#ffb5c6]">UpDevTech</span>
+        <img src={Brandlogo} alt="Logo" className="w-25 h-25object-contain" />
       </div>
       
       {/* 2. Centro: Links de Navegação */}
