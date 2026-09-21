@@ -6,22 +6,22 @@ const Hero = () => {
       <div className="max-w-3xl">
         <div className="flex items-center gap-2 mb-6">
           <div className="w-1 h-1 bg-primary-light"></div>
-          <span className="text-[10px] uppercase tracking-[0.3em] font-headline text-primary-light font-bold">Digital Monolith Agency</span>
+          <span className="text-[10px] uppercase tracking-[0.3em] font-headline text-primary-light font-bold">Engenharia de software sob medida</span>
         </div>
         
         <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[1.1] mb-8 uppercase tracking-tighter">
-          Transformamos sua visão em <span className="text-primary-light text-glow">tecnologia</span> de alta performance.
+          Transformamos problemas reais em <span className="text-primary-light text-glow">soluções digitais</span> que ajudam empresas a crescer.
         </h1>
         
         <p className="text-lg md:text-xl text-white/60 font-body mb-12 max-w-xl leading-relaxed">
-          Engenharia de elite com o DNA de Recife. Unimos a robustez do Padrão Monolith com a agilidade de uma boutique premium de software.
+          A UpDevTech desenvolve sistemas, aplicativos e automações para empresas que precisam organizar operações, reduzir tarefas manuais e evoluir com segurança.
         </p>
         
         <div className="flex flex-wrap gap-4">
-          <button className="monolith-button">Iniciar Projeto</button>
-          <button className="px-8 py-4 border border-white/10 font-headline font-bold uppercase tracking-wider hover:bg-white/5 transition-all">
-            Conhecer o Padrão
-          </button>
+          <a href="https://wa.me/5581995270031?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20UpDevTech." target="_blank" rel="noreferrer" className="monolith-button">Falar sobre um projeto</a>
+          <a href="#projetos" className="px-8 py-4 border border-white/10 font-headline font-bold uppercase tracking-wider hover:bg-white/5 transition-all">
+            Ver experiências
+          </a>
         </div>
       </div>
 
@@ -34,8 +34,8 @@ const Hero = () => {
             className="w-full grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700"
           />
           <div className="absolute -bottom-6 -right-6 bg-surface-highest p-6 min-w-[200px]">
-            <div className="text-4xl font-headline font-bold text-primary-light mb-1">0%</div>
-            <div className="text-[10px] uppercase tracking-widest text-white/50">Objetivo de Erro <br/> Anual em Prod</div>
+            <div className="text-4xl font-headline font-bold text-primary-light mb-1">3</div>
+            <div className="text-[10px] uppercase tracking-widest text-white/50">Frentes integradas: <br/>API, Web e App</div>
           </div>
         </div>
       </div>

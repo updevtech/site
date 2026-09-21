@@ -26,7 +26,7 @@
 
 @layer components {
   .text-glow {
-    text-shadow: 0 0 15px rgba(255, 177, 197, 0.4), 0 0 30px rgba(255, 177, 197, 0.2);
+    text-shadow: 0 0 15px rgba(220, 36, 48, 0.42), 0 0 30px rgba(123, 67, 151, 0.28);
   }
 
   .glass-navbar {
@@ -43,8 +43,55 @@
   }
 
   .surface-card:hover {
-    @apply shadow-internal-glow brightness-125;
+  @apply shadow-internal-glow brightness-125;
+}
+
+.technology-marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.technology-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: technology-marquee-scroll 32s linear infinite;
+}
+
+.technology-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.technology-marquee:hover .technology-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes technology-marquee-scroll {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technology-marquee-track {
+    animation: none;
+  }
+}
 }
 
 /* Custom noise texture for Monolith Module */

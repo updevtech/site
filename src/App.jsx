@@ -4,6 +4,9 @@ import Hero from './components/Hero'
 import BentoGrid from './components/BentoGrid'
 import MonolithModule from './components/MonolithModule'
 import CoreCapabilities from './components/CoreCapabilities'
+import Experience from './components/Experience'
+import Process from './components/Process'
+import Faq from './components/Faq'
 import Footer from './components/Footer'
 
 function App() {
@@ -12,22 +15,12 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-
-        {/* Se o BentoGrid for a tela de Diferenciais, coloque o ID aqui: */}
-        <section id="diferenciais">
-          <BentoGrid />
-        </section>
-
-        {/* O Monólito */}
-        <section id="padrao">
-          <MonolithModule />
-        </section>
-
-        {/* AQUI ESTÁ A SOLUÇÃO: Coloque o id="servicos" envolvendo o CoreCapabilities */}
-        <section id="servicos">
-          <CoreCapabilities />
-        </section>
-        
+        <BentoGrid />
+        <MonolithModule />
+        <CoreCapabilities />
+        <Process />
+        <Experience />
+        <Faq />
       </main>
       <Footer />
     </div>

@@ -12,12 +12,12 @@ export default {
         "surface-highest": "#3e3134",
         "surface-dim": "#1b1013", // Customizing surface-dim for bento grid
         primary: {
-          light: "#ffb1c5",
-          dark: "#a62d5b",
-          DEFAULT: "#ffb1c5",
+          light: "#dc2430",
+          dark: "#7b4397",
+          DEFAULT: "#dc2430",
         },
-        "on-primary-container": "#ffd9e2",
-        "primary-container": "#a62d5b",
+        "on-primary-container": "#ffffff",
+        "primary-container": "#7b4397",
         "outline-variant": "rgba(86, 65, 70, 0.15)",
       },
       fontFamily: {
@@ -25,10 +25,10 @@ export default {
         body: ["Inter", "sans-serif"],
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(to bottom right, #ffb1c5, #a62d5b)',
+        'gradient-primary': 'linear-gradient(to bottom right, #7b4397, #dc2430)',
       },
       boxShadow: {
-        'internal-glow': 'inset 0 0 20px rgba(255, 177, 197, 0.1)',
+        'internal-glow': 'inset 0 0 20px rgba(220, 36, 48, 0.12)',
       }
     },
   },
