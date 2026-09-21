@@ -5,16 +5,16 @@ const MonolithModule = () => {
     <section className="py-24 px-6 md:px-20 bg-primary-container noise-texture text-on-primary-container">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <div className="text-[10px] uppercase tracking-[0.4em] font-headline font-bold mb-6 opacity-60">Manifesto Monolith.01</div>
+          <div className="text-[10px] uppercase tracking-[0.4em] font-headline font-bold mb-6 opacity-60">Sobre a UpDevTech</div>
           <h2 className="text-4xl md:text-6xl font-headline font-bold uppercase mb-8 leading-[1.1]">
-            Uma Boutique de Software com Alma de Gigante.
+            Uma empresa pequena, com responsabilidade de ponta a ponta.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm opacity-90 font-body leading-relaxed">
             <p>
-              Nascemos no ecossistema de Recife para elevar a régua da entrega digital. Nossa estrutura é enxuta, mas nossa tecnologia é monumental. Construímos soluções que não apenas funcionam, mas sustentam negócios em crescimento exponencial.
+              A UpDevTech nasceu em Recife para transformar conhecimento em soluções úteis para empresas de diferentes áreas. Nossa estrutura é enxuta, o contato é próximo e cada entrega precisa fazer sentido para o negócio.
             </p>
             <p>
-              O "Padrão Monolith" é o nosso selo: se não for para ser o melhor código da sua stack, não deve ser escrito. Combinamos robustez técnica com a flexibilidade que o mercado moderno exige.
+              Trabalhamos com uma visão integrada de produto: API, Web e App pensados juntos, com arquitetura clara, evolução por etapas e atenção ao impacto que o software terá na vida real dos usuários.
             </p>
           </div>
         </div>

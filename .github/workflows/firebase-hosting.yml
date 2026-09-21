@@ -1,0 +1,49 @@
+name: Publicar site no Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Validar build de produção
+        run: npm run build
+
+      - name: Publicar preview do Pull Request
+        if: github.event_name == 'pull_request'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_UPDEVTECH_57B6E }}
+          projectId: updevtech-57b6e
+          channelId: pr-${{ github.event.pull_request.number }}
+
+      - name: Publicar versão oficial
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_UPDEVTECH_57B6E }}
+          projectId: updevtech-57b6e
+          channelId: live
