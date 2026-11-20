@@ -8,6 +8,7 @@ const initialForm = {
   service: '',
   problem: '',
   website: '',
+  privacy_consent: false,
 };
 
 const crmEndpoint = import.meta.env.VITE_CRM_PUBLIC_API_URL || 'https://crm.updevtech.com.br/api/public/opportunities';
@@ -36,6 +37,10 @@ const ContactForm = () => {
           email: form.email || null,
           whatsapp: form.whatsapp || null,
           website: form.website || null,
+          ...['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].reduce((tracking, key) => {
+            tracking[key] = new URLSearchParams(window.location.search).get(key) || null;
+            return tracking;
+          }, {}),
         }),
       });
       const payload = await response.json().catch(() => ({}));
@@ -89,6 +94,10 @@ const ContactForm = () => {
           <option>Produto digital</option>
           <option>Consultoria técnica</option>
         </select>
+      </label>
+      <label className="md:col-span-2 flex items-start gap-3 text-xs text-white/50 normal-case tracking-normal font-body">
+        <input type="checkbox" name="privacy_consent" checked={form.privacy_consent} onChange={(event) => setForm((current) => ({ ...current, privacy_consent: event.target.checked }))} required className="mt-1 accent-primary-light" />
+        <span>Concordo com o uso dos meus dados para retorno comercial. Consulte a <a className="text-primary-light underline" href="/politica-de-privacidade.html" target="_blank" rel="noreferrer">política de privacidade</a>.</span>
       </label>
       <label className="grid gap-2 text-xs uppercase tracking-widest text-white/60 font-headline md:col-span-2">
         Conte um pouco do cenário *
