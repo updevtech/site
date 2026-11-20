@@ -5,22 +5,22 @@ const capabilities = [
   {
     id: '01',
     title: 'Sistemas Web Customizados',
-    desc: 'Arquiteturas distribuídas e interfaces de alta performance para operações complexas.'
+    desc: 'Painéis e plataformas para centralizar processos, dados, usuários e operações do seu negócio.'
   },
   {
     id: '02',
     title: 'Aplicativos Mobile',
-    desc: 'Experiências nativas e híbridas que colocam o seu negócio na palma da mão do usuário.'
+    desc: 'Aplicativos Android e iOS para conectar sua operação aos clientes, fornecedores e equipes.'
   },
   {
     id: '03',
     title: 'Automação Inteligente',
-    desc: 'Eficiência operacional através de scripts, IA e integração de dados de última geração.'
+    desc: 'Integrações, automações e IA para reduzir tarefas repetitivas e melhorar a eficiência operacional.'
   },
   {
     id: '04',
     title: 'UX/UI Design',
-    desc: 'Interfaces que traduzem autoridade e sofisticação em jornadas de usuário impecáveis.'
+    desc: 'Experiências claras e funcionais, pensadas para facilitar a jornada de quem usa o sistema.'
   }
 ];
 
@@ -28,7 +28,7 @@ const CoreCapabilities = () => {
   return (
     <section id="servicos" className="py-24 px-6 md:px-20 bg-surface">
       <div className="flex items-center gap-4 mb-16">
-        <h2 className="text-4xl md:text-5xl font-headline font-bold uppercase">Core Capabilities</h2>
+        <h2 className="text-4xl md:text-5xl font-headline font-bold uppercase">Nossas soluções</h2>
         <div className="flex-1 h-[1px] bg-white/10"></div>
       </div>
 
@@ -49,13 +49,23 @@ const CoreCapabilities = () => {
 
       <div className="mt-32 text-center overflow-hidden">
         <div className="text-[10px] uppercase tracking-[1em] text-white/20 mb-12">Nosso Ecossistema Tecnológico</div>
-        <div className="flex flex-wrap justify-center gap-12 text-sm font-headline font-bold text-white/40 uppercase tracking-widest">
-          <span>Node.js</span>
-          <span>React</span>
-          <span>Python</span>
-          <span>AWS</span>
-          <span>PostgreSQL</span>
-          <span>Docker</span>
+        <div className="technology-marquee" aria-label="Tecnologias utilizadas pela UpDevTech">
+          <div className="technology-marquee-track">
+            {[0, 1].map((group) => (
+              <div className="technology-marquee-group" aria-hidden={group === 1} key={group}>
+                <span>Flutter</span>
+                <span>Kotlin</span>
+                <span>Swift</span>
+                <span>React</span>
+                <span>Python</span>
+                <span>Node.js</span>
+                <span>PostgreSQL</span>
+                <span>Google Cloud</span>
+                <span>Firebase</span>
+                <span>Docker</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

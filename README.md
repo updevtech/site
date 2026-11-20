@@ -1,5 +1,15 @@
 # React + Vite
 
+## Publicação na AWS Lightsail
+
+O site é servido pelo Nginx na mesma máquina Lightsail do CRM. O workflow da branch `develop` valida o build e dispara o deploy remoto via SSH.
+
+```bash
+npm run build
+```
+
+No servidor, o Caddy recebe `updevtech.com.br` e encaminha para o container do site.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
