@@ -1,0 +1,50 @@
+name: Publicar site na AWS Lightsail
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - "src/**"
+      - "public/**"
+      - "Dockerfile"
+      - "deploy/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/lightsail-deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lightsail-site-production
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Validar build
+        run: |
+          npm ci
+          npm run build
+          npm run lint
+
+      - name: Publicar na máquina do CRM
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ vars.LIGHTSAIL_HOST }}
+          username: ${{ vars.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_PRIVATE_KEY }}
+          port: 22
+          script: sudo /usr/local/sbin/updevtech-crm-deploy

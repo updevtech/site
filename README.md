@@ -1,15 +1,14 @@
 # React + Vite
 
-## Publicação no Firebase Hosting
+## Publicação na AWS Lightsail
 
-Este site usa o projeto Firebase exclusivo `updevtech-57b6e` da UpDevTech.
+O site é servido pelo Nginx na mesma máquina Lightsail do CRM. O workflow da branch `develop` valida o build e dispara o deploy remoto via SSH.
 
 ```bash
 npm run build
-firebase deploy --only hosting
 ```
 
-Depois, o domínio personalizado pode ser conectado pelo Firebase Hosting.
+No servidor, o Caddy recebe `updevtech.com.br` e encaminha para o container do site.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
