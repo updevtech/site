@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactForm from './ContactForm';
 
 const Footer = () => {
   return (
@@ -10,7 +11,9 @@ const Footer = () => {
         <p className="text-white/50 mb-12 max-w-xl mx-auto font-body">
           Conte-nos o que sua empresa precisa. Vamos entender o cenário e avaliar juntos o melhor caminho para transformar a ideia em uma solução viável.
         </p>
-        <a href="https://wa.me/5581995270031?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20UpDevTech." target="_blank" rel="noreferrer" className="monolith-button px-12 py-6 text-lg">Iniciar conversa</a>
+        <ContactForm />
+        <p className="text-white/40 text-sm mb-8">Prefere falar direto? A conversa também continua pelo WhatsApp.</p>
+        <a href="https://wa.me/5581995270031?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20UpDevTech." target="_blank" rel="noreferrer" className="monolith-button px-12 py-6 text-lg">Abrir WhatsApp</a>
       </div>
 
       <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-8">

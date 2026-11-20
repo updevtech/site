@@ -38,6 +38,14 @@
     @apply bg-gradient-primary px-8 py-4 font-headline font-bold uppercase tracking-wider transition-all hover:brightness-110 active:scale-95 text-white;
   }
 
+  .contact-input {
+    @apply w-full bg-white/[0.04] border border-white/10 px-4 py-3 text-white outline-none transition-colors focus:border-primary-light;
+  }
+
+  .contact-input option {
+    color: #1b1013;
+  }
+
   .surface-card {
     @apply bg-surface-low transition-all duration-300;
   }
